@@ -14,8 +14,7 @@
   }:
     flake-utils.lib.eachDefaultSystem (system: let
       pkgs = nixpkgs.legacyPackages.${system};
-    in {
-      packages.default = pkgs.stdenv.mkDerivation {
+      comic-code-ligatures-nerd-font = pkgs.stdenv.mkDerivation {
         pname = "comic-code-ligatures-nerd-font";
         version = "1";
 
@@ -30,5 +29,8 @@
           runHook postInstall
         '';
       };
+    in {
+      packages.default = comic-code-ligatures-nerd-font;
+      packages.comic-code-ligatures-nerd-font = comic-code-ligatures-nerd-font;
     });
 }
