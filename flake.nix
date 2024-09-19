@@ -30,6 +30,5 @@
           runHook postInstall
         '';
       };
-      packages.comic-code-ligatures-nerd-font = self.packages.default;
     });
 }
