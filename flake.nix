@@ -31,5 +31,9 @@
         '';
       };
       packages.comic-code-ligatures-nerd-font = self.packages.default;
+
+      apps.default = flake-utils.lib.mkApp {
+        drv = self.packages.default;
+      };
     });
 }
